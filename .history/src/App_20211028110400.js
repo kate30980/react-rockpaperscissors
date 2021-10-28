@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 const App = () => {
   const [userChoice, setUserChoice] = useState(null);
   const [computerChoice, setComputerChoice] = useState(null);
-  const [result, setResult] = useState(null);
   const choices = ["rock", "paper", "scissors"];
 
   const handleClick = (value) => {
@@ -17,32 +16,10 @@ const App = () => {
     setComputerChoice(randomChoice);
   };
 
-  useEffect(() => {
-    {
-      switch (userChoice + computerChoice) {
-        case "scissorspaper":
-        case "rockscissors":
-        case "paperrock":
-          setResult("YOU WIN!");
-          break;
-        case "paperscissors":
-        case "scissorsrock":
-        case "rockpaper":
-          setResult("YOU LOSE!");
-          break;
-        case "rockrock":
-        case "paperpaper":
-        case "scissorsscissors":
-          setResult("DRAW!");
-          break;
-      }
-    }
-  }, [userChoice, computerChoice]);
-
   return (
     <div>
       <h1>user choice is: {userChoice} </h1>
-      <h1>computer choice is: {computerChoice} </h1>
+      <h1>computer choice is </h1>
       {/* <button onClick={() => handleClick("rock")}>Rock</button>
       <button onClick={() => handleClick("paper")}>Paper</button>
       <button onClick={() => handleClick("scissors")}>Scissors</button> */}
@@ -51,7 +28,6 @@ const App = () => {
           {choice}
         </button>
       ))}
-      <h1>{result}</h1>
     </div>
   );
 };

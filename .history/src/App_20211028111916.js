@@ -18,26 +18,28 @@ const App = () => {
   };
 
   useEffect(() => {
-    {
-      switch (userChoice + computerChoice) {
-        case "scissorspaper":
-        case "rockscissors":
-        case "paperrock":
-          setResult("YOU WIN!");
-          break;
-        case "paperscissors":
-        case "scissorsrock":
-        case "rockpaper":
-          setResult("YOU LOSE!");
-          break;
-        case "rockrock":
-        case "paperpaper":
-        case "scissorsscissors":
-          setResult("DRAW!");
-          break;
-      }
-    }
+    checkResult();
   }, [userChoice, computerChoice]);
+
+  const checkResult = () => {
+    switch (userChoice + computerChoice) {
+      case "scissorspaper":
+      case "rockscissors":
+      case "paperrock":
+        setResult("YOU WIN!");
+        break;
+      case "paperscissors":
+      case "scissorsrock":
+      case "rockpaper":
+        setResult("YOU LOSE!");
+        break;
+      case "rockrock":
+      case "paperpaper":
+      case "scissorsscissors":
+        setResult("DRAW!");
+        break;
+    }
+  };
 
   return (
     <div>

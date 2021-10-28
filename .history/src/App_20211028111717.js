@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 const App = () => {
   const [userChoice, setUserChoice] = useState(null);
@@ -15,29 +15,28 @@ const App = () => {
     const randomNumber = Math.floor(Math.random() * choices.length);
     const randomChoice = choices[randomNumber];
     setComputerChoice(randomChoice);
+    checkResult();
   };
 
-  useEffect(() => {
-    {
-      switch (userChoice + computerChoice) {
-        case "scissorspaper":
-        case "rockscissors":
-        case "paperrock":
-          setResult("YOU WIN!");
-          break;
-        case "paperscissors":
-        case "scissorsrock":
-        case "rockpaper":
-          setResult("YOU LOSE!");
-          break;
-        case "rockrock":
-        case "paperpaper":
-        case "scissorsscissors":
-          setResult("DRAW!");
-          break;
-      }
+  const checkResult = () => {
+    switch (userChoice + computerChoice) {
+      case "scissorspaper":
+      case "rockscissors":
+      case "paperrock":
+        setResult("YOU WIN!");
+        break;
+      case "paperscissors":
+      case "scissorsrock":
+      case "rockpaper":
+        setResult("YOU LOSE!");
+        break;
+      case "rockrock":
+      case "paperpaper":
+      case "scissorsscissors":
+        setResult("DRAW!");
+        break;
     }
-  }, [userChoice, computerChoice]);
+  };
 
   return (
     <div>
