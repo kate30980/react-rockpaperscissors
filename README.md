@@ -1,5 +1,5 @@
 
-This is a small project that I inspired by Rock, Paper, Scissors base game combined with "The Big Bang theory" series.
+This is a small project that I've inspired by Rock, Paper, Scissors base game combined with the game in "The Big Bang theory" series.
 Easy rules: 
   - Scissors cuts Paper
   - Paper covers Rock
